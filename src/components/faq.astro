@@ -1,0 +1,79 @@
+---
+import { t } from "i18next";
+
+const faqs = [
+	{
+		title: "How to Download video Tiktok no watermark?",
+		description: `Open Tik Tok app on your phone/or Web on your browser.
+Choose whatever video you want to download.
+Click to the Share button at the right bottom.
+Click the Copy Link button.
+Go back to webname.com and paste your download link to the field above then click to the Download button.
+Wait for our server to do its job and then, save the video to your device.`,
+	},
+	{
+		title: "How to get the TikTok video download link?",
+		description: `Open your TikTok application
+Choose the TikTok video that you want to download
+Click Share and at the Share options, find Copy Link button
+Your download URL is ready on the clipboard.
+For example, the link would look like this
+https://v.douyin.com/3vn57r/
+or
+https://www.tiktok.com/@philandmore/video/6805867805452324102
+or
+https://m.tiktok.com/v/6805867805452324102.html
+and more...`,
+	},
+];
+---
+
+<div class="mx-auto max-w-screen-2xl px-6 py-10 dark:bg-gray-800">
+	<div class="mx-auto divide-y divide-gray-300 dark:divide-gray-700">
+		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">FAQ</h2>
+		<dl class="mt-10 space-y-6 divide-y divide-gray-300 dark:divide-gray-700">
+			{
+				faqs.map((faq, index) => (
+					<div class="pt-6" x-data="{ open: false }">
+						<dt>
+							<button
+								type="button"
+								class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
+								@click="open = !open"
+								:aria-expanded="open.toString()"
+								:class="{'bg-gray-100 dark:bg-gray-800': open}">
+								<span class="text-base font-semibold leading-7" :class="{'text-indigo-100': open}">{faq.title}</span>
+								<span class="ml-6 flex h-7 items-center">
+									<svg
+										class="h-6 w-6 transform transition-transform"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										aria-hidden="true"
+										:class="{'rotate-180': open}">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+									</svg>
+								</span>
+							</button>
+						</dt>
+						<dd
+							x-transition:enter="transition ease-out duration-150"
+							x-transition:enter-start="opacity-0 transform scale-95"
+							x-transition:enter-end="opacity-100 transform scale-100"
+							x-transition:leave="transition ease-in duration-150"
+							x-transition:leave-start="opacity-100 transform scale-100"
+							x-transition:leave-end="opacity-0 transform scale-95"
+							class="mt-2 pr-12"
+							x-show="open">
+							<span class="text-base leading-7 text-gray-600 dark:text-gray-300">
+								<span set:html={faq.description}></span>
+							</span>
+						</dd>
+					</div>
+				))
+			}
+		</dl>
+	</div>
+	
+</div>
