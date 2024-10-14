@@ -31,13 +31,6 @@ const { heading, subheading } = Astro.props;
 
 <div class="hero-form">
 <form action="/" name="formurl" method="get">
-<ul class="z-tabs">
-<li><a href="/" class="active">TikTok Video</a></li>
-<li><a href="/tiktok-mp3-downloader">MP3</a></li>
-<li><a href="/tiktok-photo-downloader">Photo</a></li>
-<li><a href="/tiktok-story-downloader">Story</a></li>
-<li><a href="/tiktok-douyin-downloader">DouYin</a></li>
-</ul>
 <div class="hero-input">
 <div class="alert alert-warning" role="alert" id="alert"></div>
 <div class="progress-box">
@@ -52,7 +45,8 @@ const { heading, subheading } = Astro.props;
 </div>
 <input name="url" id="url" type="text" class="form-control" placeholder="Paste TikTok link here" required="" aria-label="Name" autocomplete="off" autocapitalize="none">
 <div class="paste"><button type="button" class="btn btn-paste"><i class="icon icon-paste"></i><span>Paste</span></button>
-</div></div>
+</div>
+</div>
 <div class="hero-input-right">
 <button type="submit" class="btn btn-go flex-center"><i class="icon icon-download"></i>Download</button>
 </div>
