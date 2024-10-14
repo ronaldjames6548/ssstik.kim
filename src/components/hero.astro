@@ -3,58 +3,27 @@ import Link from '@components/ui/link.astro';
 const { heading, subheading } = Astro.props;
 ---
 
-<div class="relative isolate px-6 pt-10 lg:px-8 pb-28 bg-amber-600">
+<div class="relative isolate px-6 pt-10 lg:px-8 pb-28 bg-orange-400">
     <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true"></div>
-    <div class="mx-auto max-w-5xl">
-        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="mx-auto max-w-5xl">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
         </div>
-        <div class="text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-white">{heading}</h1>
-            <p class="mt-2 text-lg leading-8 text-gray-300">{subheading}</p>
-        </div>
-        <div class="flex items-center justify-center mt-5 space-x-2 flex-wrap">
-            <Link
-                href="/"
-                class="flex items-center px-4 py-2 bg-white-800 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-200 active:bg-gray-200 my-1"
-            >
-                <span class="ml-1">TikTok Video</span>
-            </Link>
-            <Link
-                href="/tiktok-sound-downloader"
-                class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"
-            >
-                <span class="ml-1">MP3</span>
-            </Link>
-            <Link
-                href="/tiktok-slideshow-downloader"
-                class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"
-            >
-                <span class="ml-1">Photo</span>
-            </Link>
-            <Link
-                href="/tiktok-story-downloader"
-                class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"
-            >
-                <span class="ml-1">Story</span>
-            </Link>
-        </div>
+<div class="text-center">
+    <h1 class="text-4xl font-bold tracking-tight text-white">{heading}</h1>
+    <p class="mt-2 text-lg leading-8 text-gray-300">{subheading}</p>
+</div>
+<div class="flex items-center justify-center mt-5 space-x-2 flex-wrap">
+    <Link href="/" class="flex items-center px-4 py-2 bg-white-800 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-200 active:bg-gray-200 my-1"><span class="ml-1">TikTok Video</span></Link>
+    <Link href="/tiktok-sound-downloader" class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"><span class="ml-1">MP3</span></Link>
+    <Link href="/tiktok-slideshow-downloader" class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"><span class="ml-1">Photo</span></Link>
+    <Link href="/tiktok-story-downloader" class="flex items-center px-8 py-2 bg-white bg-opacity-70 text-black font-semibold rounded-s shadow-md transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-opacity-80 active:bg-gray-200 my-1"><span class="ml-1">Story</span></Link>
+</div>
         <div class="relative max-w-5xl mx-auto mt-8">
             <form class="block items-center sm:space-x-4 sm:flex sub-form">
                 <div class="relative flex-1">
-                    <input
-                        type="text"
-                        placeholder="Paste your link here..."
-                        class="w-full pr-12 pl-4 py-5 outline-none rounded-lg bg-orange-100 text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent down-url"
-                        style="box-shadow: 0 0 2px rgb(255, 255, 255) !important;"
-                    />
+                    <input type="text" placeholder="Paste your link here..." class="w-full pr-12 pl-4 py-5 outline-none rounded-lg bg-orange-100 text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent down-url" style="box-shadow: 0 0 2px rgb(255, 255, 255) !important;"/>
                 </div>
-                <button
-                    class="px-6 py-5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 hover:from-indigo-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 outline-none
-                    mt-2 sm:mt-0 w-full sm:w-auto send-btn cursor-pointer"
-                    type="submit"
-                >
-                    Download
-                </button>
+                <button class="px-6 py-5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 hover:from-indigo-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 outline-none mt-2 sm:mt-0 w-full sm:w-auto send-btn cursor-pointer" type="submit">Download</button>
             </form>
         </div>
     </div>
