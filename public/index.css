@@ -966,14 +966,14 @@ header .navbar {
 }
 
 .icon.icon-download {
-    background: url(/assets/svg/down.svg) center no-repeat;
+    background: url(/images/down.svg) center no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px
 }
 
 .icon.icon-paste {
-    background: url(/assets/svg/paste.svg) center no-repeat;
+    background: url(/images/paste.svg) center no-repeat;
     width: 3rem;
     height: 1rem
 }
