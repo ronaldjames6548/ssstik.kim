@@ -33,14 +33,8 @@ export const menuitems = [
 	x-data="{open: window.innerWidth < 768 ? false : true}"
 	class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 z-10 md:pt-2 relative">
 	<div class="p-4 flex flex-row items-center justify-between">
-		<a
-			href={localizePath("/")}
-			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
-			<img src="/images/logo.svg" height="48" width="48" alt="SssTik Tiktok Downloader">
-			SssTik
-		</a>
-<img src="/images/logo.svg" height="50" width="50" alt="SssTik Tiktok Downloader">
-
+		<a href={localizePath("/")} class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
+			<img src="/images/logo.svg" height="48" width="48" alt="SssTik Tiktok Downloader">SssTik</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
 			<span class="sr-only">Open main menu</span>
 			<div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
