@@ -4,10 +4,11 @@ import CSS from "@public/index.css";
 const { heading, subheading } = Astro.props;
 ---
 
-<div class="relative isolate px-6 pt-10 lg:px-8 pb-28 bg-gradient-to-tl from-purple-500 via-indigo-500 to-blue-500">
-
+<div class="relative isolate px-6 pt-10 lg:px-8 pb-28 bg-orange-500">
   <div
-    class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+    aria-hidden="true"
+  >
   </div>
   <div class="mx-auto max-w-screen-xl another">
     <div class="text-center">
@@ -93,11 +94,7 @@ const { heading, subheading } = Astro.props;
                 style="background: linear-gradient(54.09deg, #0348dd 2.03%, #8142f5 48.63%, #ee4dd4 96.22%), linear-gradient(0deg, rgba(201, 46, 255, .15), rgba(201, 46, 255, .15))"
                 type="button"
               >
-                <img
-                  src="/images/paste.webp"
-                  class="absolute top-[50%] translate-y-[-50%] left-[17px]"
-                  alt="Paste Link to Download Tiktok video"
-                />
+                <img src="/images/paste.webp" class="aspect-auto absolute top-[50%] translate-y-[-50%] left-[17px]" alt=""/>
                 <span
                   class="bg-[#F2D1FD] px-8 py-[12px] text-xl rounded-lg"
                   id="paste-btn"
@@ -112,7 +109,7 @@ const { heading, subheading } = Astro.props;
   </div>
 
   <div class="loader items-center justify-center hidden bg-orange-500">
-    <img src="/src/icons/loader.webp" alt="Loading Tiktok Video to Download" />
+    <img src="/src/icons/loader.webp" alt="loader" />
   </div>
 
   <div class="bg-orange-500 py-16 px-4 sm:px-6 lg:px-8 main-div hidden">
@@ -121,7 +118,7 @@ const { heading, subheading } = Astro.props;
       <h2 class="text-2xl text-center mb-4 shadow-text msg break-all"></h2>
       <div class="flex flex-wrap justify-center gap-8">
         <div
-          class="gap-8 down-div grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1"
+          class="gap-8 down-div grid lg:grid-cols-1 xl:grid-cols-2 grid-cols-1"
         >
         </div>
       </div>
@@ -148,7 +145,7 @@ const { heading, subheading } = Astro.props;
     let loader;
     let e, s, r;
     const baseURL = "https://download.stiktokio.com";
-    const errorClass = "text-[#ab0000]";
+    const errorClass = "text-[#ffffff]";
     const simpleClass = "text-white";
     const imageClass = "w-full h-full object-cover rounded-lg mb-6";
     const h3Class = "text-2xl font-semibold text-white text-center mb-4";
@@ -180,18 +177,18 @@ const { heading, subheading } = Astro.props;
     function init() {
       pasteBtn = document.querySelector("#paste-btn");
 
-      // DOM elements ko dobara select karna
+      // Reselect DOM elements
       submitForm = document.querySelector(".sub-form");
       mainDiv = document.querySelector(".main-div");
       downDiv = document.querySelector(".down-div");
       message = document.querySelector(".msg");
       loader = document.querySelector(".loader");
 
-      // Submit event listener lagana
+      // Use Submit event listener
       submitForm.addEventListener("submit", dt);
       pasteBtn.addEventListener("click", pasteClipBoarValue);
 
-      // Initial data fetch karna
+      // Initial data fetch
       SFR();
     }
 
@@ -356,6 +353,7 @@ const { heading, subheading } = Astro.props;
 
     function showVideoDataOnPage(data) {
       const dnDiv = document.createElement("div");
+      const adDiv = document.createElement("div");
       const dnButtonDiv = document.createElement("div");
       const thumbnail = document.createElement("img");
       dnDiv.className =
@@ -381,6 +379,32 @@ const { heading, subheading } = Astro.props;
 
       downDiv.appendChild(dnDiv);
       dnDiv.appendChild(thumbnail);
+      const adScriptContent = `
+          atOptions = {
+              'key' : '34573b90a095e95e849f42bc513a1ec8',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+          };
+      `;
+
+      // Create a script element for the ad options
+      const optionsScript = document.createElement('script');
+      optionsScript.type = 'text/javascript';
+      optionsScript.textContent = adScriptContent;
+
+      // Create a script element for the external script
+      const externalScript = document.createElement('script');
+      externalScript.type = 'text/javascript';
+      externalScript.src = '//lockupaccede.com/34573b90a095e95e849f42bc513a1ec8/invoke.js';
+
+      // Append the scripts to the ad div
+      adDiv.appendChild(optionsScript);
+      adDiv.appendChild(externalScript);
+
+      // Append the ad div to the parent container
+      dnDiv.appendChild(adDiv);
       dnDiv.appendChild(dnButtonDiv);
 
       for (let format of data.formats) {

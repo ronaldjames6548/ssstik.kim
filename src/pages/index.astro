@@ -1,13 +1,15 @@
 ---
 import Container from "@components/container.astro";
 import Hero from "@components/hero.astro";
-
 import Layout from "@layouts/Layout.astro";
 import Features from "@components/features.astro";
 import Newsletter from "@components/newsletter.astro";
 import Testimonials from "@components/testimonials.astro";
-
 import Faq from "@components/faq.astro";
+
+import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+changeLanguage("en");
 
 const faqs = [
   {
@@ -35,10 +37,9 @@ and more...`,
   },
 ];
 ---
-
-<Layout  title="TikTok Downloader: TikTok Video Download Without Watermark in 5s - TikTokio" description="TikTokio is the fastest free Tiktok downloader online allowing you to download TikTok videos (MP3/MP4) without watermark. Unlimited TikTok downloads. HD quality.">
+<Layout  title="TikTokio - TikTok Downloader Download TikTok Videos Mp4 Free" description="Tiktokio is tiktok downloader, tiktok video downloader and tiktok story downloader download tiktok video without watermark, tiktok to mp4 and tiktok video saver.">
 <Container>
-    <Hero heading="TikTok Downloader" subheading="TikTok Video Downloader Without Watermark."/>
+    <Hero heading="Tiktokio - TikTok Downloader" subheading="Download TikTok Video Without Watermark Tiktok to mp4"/>
     <div class="content">
       <div class="relative p-4">
         <div class="max-w-screen-xl mx-auto">

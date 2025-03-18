@@ -14,7 +14,6 @@ const blogCollection = defineCollection({
 		publishDate: z.string().transform((str) => new Date(str)),
 		author: z.string().default("YourCompany"),
 		category: z.string(),
-		tags: z.array(z.string()),
 	}),
 });
 

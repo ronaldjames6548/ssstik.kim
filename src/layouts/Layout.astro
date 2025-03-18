@@ -27,35 +27,16 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      href="/images/cropped-cropped-ico-32x32.webp"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      href="/images/cropped-cropped-ico-192x192.webp"
-      sizes="192x192"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/images/cropped-cropped-ico-180x180.webp"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="/images/cropped-cropped-ico-270x270.webp"
-    />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/images/cropped-cropped-ico-32x32.webp" sizes="32x32"/>
+    <link rel="icon" href="/images/cropped-cropped-ico-192x192.webp" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="/images/cropped-cropped-ico-180x180.webp"/>
+    <meta name="msapplication-TileImage" content="/images/cropped-cropped-ico-270x270.webp"/>
     <meta name="theme-color" content="#ffffff" />
-    <meta name="robots" content="noindex" />
-
     <HeadHrefLangs />
-
     <ViewTransitions />
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="/index.css" />
-
     <SEO title={makeTitle} description={description} canonical={canonicalURL} />
 
     <script is:inline>
@@ -77,6 +58,8 @@ const makeTitle = title
 
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/pwa.ts"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","name":"Tiktokio FAQPage","mainEntity":[{"@type":"Question","name":"What is TikTokio - Tiktokio Downloader?","acceptedAnswer":{"@type":"Answer","text":"TikTokio is a free TikTok downloader available online. It helps people save TikTok videos without watermarks or convert TikTok videos to MP3 files with a few clicks. Its ease of use and high-quality downloads make it a popular TikTok saver among TT enthusiasts."}},{"@type":"Question","name":"Is TikTokio a Safe TikTok Video Downloader?","acceptedAnswer":{"@type":"Answer","text":"Yes, TikTokio is a 100% safe TikTok video downloader to use. We have an active SSL certificate to ensure the safety of users privacy"}},{"@type":"Question","name":"How to Download TikTok Video With No Watermark?","acceptedAnswer":{"@type":"Answer","text":"To download a TikTok video with no watermark, just use our TikTok downloader website. The steps are pretty simple. Please check the instructions above."}},{"@type":"Question","name":"How Do I Remove TikTok Watermark or TikTok Logo Online?","acceptedAnswer":{"@type":"Answer","text":"There are many ways to remove the TikTok watermark. The newest TikTok update allows creators to remove the Tiktok logo when the video is in draft. However, if you want to remove the TikTok watermark of the posted TikTok videos, you can go to our website (stiktokio.com). It’s one of the best TikTok downloaders. We allow users to download TikTok videos without watermarks for free, while not compromising on the video quality."}},{"@type":"Question","name":"How to Download video Tiktok no watermark?","acceptedAnswer":{"@type":"Answer","text":"Open Tik Tok app on your phone/or Web on your browser. Choose whatever video you want to download. Click to the Share button at the right bottom. Click the Copy Link button. Go back to https://stiktokio.com and paste your download link to the field above then click to the Download button. Wait for our server to do its job and then, save the video to your device."}},{"@type":"Question","name":"How to get the TikTok video download link?","acceptedAnswer":{"@type":"Answer","text":"Open your TikTok application. Choose the TikTok video that you want to download. Click Share and at the Share options, find Copy Link button. Your download URL is ready on the clipboard. For example, the link would look like this https://v.douyin.com/3vn57r/ or https://www.tiktok.com/@philandmore/video/6805867805452324102 or https://m.tiktok.com/v/6805867805452324102.html and more..."}},{"@type":"Question","name":"How to Save a TikTok Video on Desktop?","acceptedAnswer":{"@type":"Answer","text":"Saving TikTok videos to your desktop is simple and can be done using a TikTok video downloader. Follow the guide to help you save your favorite TikTok videos directly to your computer."}}]}</script>
+
   </head>
   <body class="white">
     <Navbar />
