@@ -6,7 +6,6 @@ import { Icon } from "astro-icon/components";
 import { t } from "i18next";
 
 export const menuitems = [
-	
 	{
 		title: "How to save TikTok video?",
 		path: "/how-to-download-tiktok-video-without-watermark",
@@ -87,30 +86,7 @@ export const menuitems = [
 								x-transition:leave-start="transform opacity-100 scale-100"
 								x-transition:leave-end="transform opacity-0 scale-95"
 								class="absolute mt-2 bg-white right-0 w-full origin-top-right rounded-md md:w-48 outline-2 border border-gray-300">
-								<div class="px-2 py-2 rounded-md shadow dark:bg-gray-800">
-									{item.children.map((subitem) => (
-										<Link
-											href={localizePath(subitem.path)}
-											style="hover"
-											size="sm"
-											class="block"
-											x-data="{ isActive: false }"
-											x-init={`() => {
-												const path = $el.getAttribute('data-path');
-												const checkSubPath = () => {
-													isActive = window.location.pathname === path ||
-																window.location.pathname === path + '/' ||
-																window.location.pathname === '/it' + path ||
-																window.location.pathname === '/it' + path + '/';
-												};
-												document.removeEventListener('astro:page-load', checkSubPath);
-												document.addEventListener('astro:page-load', checkSubPath);
-											}`}
-											x-bind:class="{ 'bg-gray-200 dark:bg-gray-600': isActive }">
-											{subitem.title}
-										</Link>
-									))}
-								</div>
+								
 							</div>
 						</div>
 					) : (
